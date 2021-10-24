@@ -16,6 +16,7 @@ const { Client } = require("pg");
   try {
     await client.connect();
     const result = await client.query('SELECT message FROM messages')
+    console.log(result.rows)
     console.log(result.rows[0].message)
     await client.end()
   } catch (err) {
