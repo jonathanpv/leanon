@@ -3,6 +3,7 @@ dependencies:
   fastify-formbody: 5.0.0
   fastify-static: 4.0.1
   handlebars: 4.7.7
+  minimist: 1.2.5
   pg: 8.7.1
   pg-connection-string: 2.5.0
   point-of-view: 4.14.0
@@ -779,6 +780,7 @@ specifiers:
   fastify-formbody: ^5.0.0
   fastify-static: ^4.0.0
   handlebars: ^4.7.7
+  minimist: latest
   pg: latest
   pg-connection-string: latest
   point-of-view: ^4.14.0

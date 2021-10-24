@@ -6,12 +6,13 @@
 const parse = require("pg-connection-string").parse;
 const { Client } = require("pg");
 const prompt = require("prompt");
+var argv = require('minimist')(process.argv.slice(2));
+console.log(argv);
 
 (async () => {
 
   prompt.start()
-  // const URI = await prompt.get("connectionString");
-  const URI = "postgresql://jonathan:RzmizDKWxLsJ5Q6K@free-tier.gcp-us-central1.cockroachlabs.cloud:26257/defaultdb?sslmode=verify-full&sslrootcert=$HOME/.postgresql/root.crt&options=--cluster%3Dhackduke-project-4340";
+  const URI = await prompt.get("connectionString");
   var connectionString;
   // Expand $env:appdata environment variable in Windows connection string
   if (URI.connectionString.includes("env:appdata")) {
