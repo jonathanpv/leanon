@@ -6,12 +6,14 @@
 const parse = require("pg-connection-string").parse;
 const { Client } = require("pg");
 const prompt = require("prompt");
-var argv = require('minimist')(process.argv.slice(2));
-console.log(argv);
+const optimist = require("optimist");
+prompt.override = optimist.argv;
+
 
 (async () => {
 
   prompt.start()
+  
   const URI = await prompt.get("connectionString");
   var connectionString;
   // Expand $env:appdata environment variable in Windows connection string

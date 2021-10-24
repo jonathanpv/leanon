@@ -4,6 +4,7 @@ dependencies:
   fastify-static: 4.0.1
   handlebars: 4.7.7
   minimist: 1.2.5
+  optimist: 0.6.1
   pg: 8.7.1
   pg-connection-string: 2.5.0
   point-of-view: 4.14.0
@@ -389,6 +390,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-yJHVQEhyqPLUTgt9B83PXu6W3rx4MvvHvSUvToogpwoGDOUQ+yDrR0HRot+yOCdCO7u4hX3pWft6kWBBcqh0UA==
+  /minimist/0.0.10:
+    dev: false
+    resolution:
+      integrity: sha1-3j+YVD2/lggr5IrRoMfNqDYwHc8=
   /minimist/1.2.5:
     dev: false
     resolution:
@@ -427,6 +432,13 @@ packages:
     dev: false
     resolution:
       integrity: sha1-WDsap3WWHUsROsF9nFC6753Xa9E=
+  /optimist/0.6.1:
+    dependencies:
+      minimist: 0.0.10
+      wordwrap: 0.0.3
+    dev: false
+    resolution:
+      integrity: sha1-2j6nRob6IaGaERwybpDrFaAZZoY=
   /packet-reader/1.0.0:
     dev: false
     resolution:
@@ -754,6 +766,12 @@ packages:
       node: '>= 0.10.0'
     resolution:
       integrity: sha512-TWoamHt5yYvsMarGlGEQE59SbJHqGsZV8/lwC+iCcGeAe0vUaOh+Lv6SYM17ouzC/a/LB1/hz/7sxFBtlu1l4A==
+  /wordwrap/0.0.3:
+    dev: false
+    engines:
+      node: '>=0.4.0'
+    resolution:
+      integrity: sha1-o9XabNXAvAAI03I0u68b7WMFkQc=
   /wordwrap/1.0.0:
     dev: false
     resolution:
@@ -780,7 +798,8 @@ specifiers:
   fastify-formbody: ^5.0.0
   fastify-static: ^4.0.0
   handlebars: ^4.7.7
-  minimist: latest
+  minimist: ^1.2.5
+  optimist: ^0.6.1
   pg: latest
   pg-connection-string: latest
   point-of-view: ^4.14.0
