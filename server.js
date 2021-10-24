@@ -7,8 +7,11 @@ const parse = require("pg-connection-string").parse;
 const { Client } = require("pg");
 const prompt = require("prompt");
 const optimist = require("optimist");
-prompt.override = optimist.argv;
-
+var argv = require('minimist')(process.argv.slice(2));
+prompt.override = argv;
+console.log(argv);
+console.log("optimist");
+console.log(optimist.argv);
 
 (async () => {
 
@@ -16,20 +19,13 @@ prompt.override = optimist.argv;
   
   const URI = await prompt.get("connectionString");
   var connectionString;
-  // Expand $env:appdata environment variable in Windows connection string
-  if (URI.connectionString.includes("env:appdata")) {
-    connectionString = await URI.connectionString.replace(
-      "$env:appdata",
-      process.env.APPDATA
-    );
-  }
+  console.log(process.env.HOME);
   // Expand $HOME environment variable in UNIX connection string
-  else if (URI.connectionString.includes("HOME")) {
-    connectionString = await URI.connectionString.replace(
-      "$HOME",
-      process.env.HOME
-    );
-  }
+  connectionString = await URI.connectionString.replace(
+    "$HOME",
+    process.env.HOME
+  );
+  
   var config = parse(connectionString);
   config.port = 26257;
   config.database = 'defaultdb';
