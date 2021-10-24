@@ -5,27 +5,9 @@
 
 const parse = require("pg-connection-string").parse;
 const { Client } = require("pg");
-const prompt = require("prompt");
-const optimist = require("optimist");
-var argv = require('minimist')(process.argv.slice(2));
-prompt.override = argv;
-console.log(argv);
-console.log("optimist");
-console.log(optimist.argv);
 
 (async () => {
-
-  prompt.start()
-  
-  const URI = await prompt.get("connectionString");
-  var connectionString;
-  console.log(process.env.HOME);
-  // Expand $HOME environment variable in UNIX connection string
-  connectionString = await URI.connectionString.replace(
-    "$HOME",
-    process.env.HOME
-  );
-  
+  var connectionString =  "postgresql://jonathan:RzmizDKWxLsJ5Q6K@free-tier.gcp-us-central1.cockroachlabs.cloud:26257/defaultdb?sslmode=verify-full&sslrootcert=/app/.postgresql/root.crt&options=--cluster%3Dhackduke-project-4340" 
   var config = parse(connectionString);
   config.port = 26257;
   config.database = 'defaultdb';
@@ -37,11 +19,11 @@ console.log(optimist.argv);
     console.log(result.rows[0].message)
     await client.end()
   } catch (err) {
-    console.log(`error connecting: ${err}`)
+    console.log(`errords connecting: ${err}`)
   }
-
-  // Exit program
-  process.exit();
+ 
+  // Exit programb
+  // process.exit();
 })().catch((err) => console.log(err.stack));
 
 const path = require("path");

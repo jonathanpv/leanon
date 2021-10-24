@@ -4,7 +4,7 @@
   "description": "A simple Node app built on fastify, instantly up and running.",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js --connectionString postgresql://jonathan:RzmizDKWxLsJ5Q6K@free-tier.gcp-us-central1.cockroachlabs.cloud:26257/defaultdb?sslmode=verify-full&sslrootcert=$HOME/.postgresql/root.crt&options=--cluster%3Dhackduke-project-4340"
+    "start": "node server.js"
   },
   "dependencies": {
     "fastify": "^3.14.1",
@@ -13,10 +13,7 @@
     "handlebars": "^4.7.7",
     "point-of-view": "^4.14.0",
     "pg": "latest",
-    "pg-connection-string": "latest",
-    "prompt": "latest",
-    "minimist": "^1.2.5",
-    "optimist": "^0.6.1"
+    "pg-connection-string": "latest"
   },
   "engines": {
     "node": "12.x"
