@@ -15,7 +15,7 @@
     "pg": "latest",
     "pg-connection-string": "latest",
     "prompt": "latest"
-
+ 
   },
   "engines": {
     "node": "12.x"

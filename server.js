@@ -10,7 +10,8 @@ const prompt = require("prompt");
 (async () => {
 
   prompt.start()
-  const URI = await prompt.get("connectionString");
+  // const URI = await prompt.get("connectionString");
+  const URI = "postgresql://jonathan:RzmizDKWxLsJ5Q6K@free-tier.gcp-us-central1.cockroachlabs.cloud:26257/defaultdb?sslmode=verify-full&sslrootcert=$HOME/.postgresql/root.crt&options=--cluster%3Dhackduke-project-4340";
   var connectionString;
   // Expand $env:appdata environment variable in Windows connection string
   if (URI.connectionString.includes("env:appdata")) {
